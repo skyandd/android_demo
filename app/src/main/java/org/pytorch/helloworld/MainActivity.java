@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
     try {
       // creating bitmap from packaged into app android asset 'image.jpg',
       // app/src/main/assets/image.jpg
-      showBitmap = BitmapFactory.decodeStream(getAssets().open("050105_chek5.jpg"));
+      showBitmap = BitmapFactory.decodeStream(getAssets().open("XXXL.jpg"));
       modelBitmap = Bitmap.createScaledBitmap(showBitmap, 224, 224, true);
       // loading serialized torchscript module from packaged into app android asset model.pt,
       // app/src/model/assets/model.pt
-      module = LiteModuleLoader.load(assetFilePath(this, "model.pt"));
+      module = LiteModuleLoader.load(assetFilePath(this, "best_model.pt"));
     } catch (IOException e) {
       Log.e("PytorchHelloWorld", "Error reading assets", e);
       finish();
